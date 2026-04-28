@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --bg-2: #f5f5f5;
+  --bg-3: #ebebeb;
+  --primary: #111111;
+  --muted: #555570;
+  --accent-1: #e63e3e;
+  --accent-2: #d4a000;
+  --accent-3: #3a9e4a;
+  --accent-4: #1a6fe0;
+  --accent-5: #d4700a;
+  --card-bg: #ffffff;
+  --card-border: #ddddee;
+  
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0a0f;
+  --bg-2: #111118;
+  --bg-3: #1a1a24;
+  --primary: #f0f0f5;
+  --muted: #8888aa;
+  --accent-1: #ff6b6b;
+  --accent-2: #ffd93d;
+  --accent-3: #6bcb77;
+  --accent-4: #4d96ff;
+  --card-bg: #14141e;
+  --card-border: #2a2a3d;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-2: #f5f5f5;
+  --bg-3: #ebebeb;
+  --primary: #111111;
+  --muted: #666680;
+  --accent-1: #e63e3e;
+  --accent-2: #d4a000;
+  --accent-3: #3a9e4a;
+  --accent-4: #1a6fe0;
+  --card-bg: #ffffff;
+  --card-border: #ddddee;
+}
+
+[data-theme="red"] {
+  --bg: #1a0505;
+  --bg-2: #2a0a0a;
+  --bg-3: #3a0f0f;
+  --primary: #fee2e2;
+  --muted: #fca5a5;
+  --accent-1: #ef4444;
+  --accent-2: #f87171;
+  --accent-3: #22c55e;
+  --accent-4: #3b82f6;
+  --accent-5: #f59e0b;
+  --card-bg: #2d0d0d;
+  --card-border: #4a1a1a;
+}
+
+[data-theme="green"] {
+  --bg: #051a05;
+  --bg-2: #0a2a0a;
+  --bg-3: #0f3a0f;
+  --primary: #e2fee2;
+  --muted: #a5fca5;
+  --accent-1: #22c55e;
+  --accent-2: #4ade80;
+  --accent-3: #f59e0b;
+  --accent-4: #3b82f6;
+  --accent-5: #ef4444;
+  --card-bg: #0d2d0d;
+  --card-border: #1a4a1a;
+}
+
+[data-theme="happy"] {
+  --bg: #0a0a0f;
+  --bg-2: #111118;
+  --bg-3: #1a1a24;
+  --primary: #f0f0f5;
+  --muted: #8888aa;
+  --accent-1: #ff6b6b;
+  --accent-2: #ffd93d;
+  --accent-3: #6bcb77;
+  --accent-4: #4d96ff;
+  --accent-5: #ff922b;
+  --card-bg: #14141e;
+  --card-border: #2a2a3d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  background: var(--bg);
+  color: var(--primary);
+  font-family: var(--font-body);
+}
+
+.text-overflow-fix {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+::selection {
+  background: var(--accent-1);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6b6b;
+  border-radius: 99px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: none;
+}
+
+a {
+  cursor: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Utilities */
+.mesh-gradient {
+  background: var(--bg);
+  background-image: 
+    radial-gradient(ellipse at 20% 50%, #ff6b6b15 0%, rgba(0,0,0,0) 50%),
+    radial-gradient(ellipse at 80% 20%, #ffd93d15 0%, rgba(0,0,0,0) 50%),
+    radial-gradient(ellipse at 50% 80%, #4d96ff15 0%, rgba(0,0,0,0) 50%);
+}
+
+.text-hero {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.text-section {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+}
+
+.text-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.card-clip {
+  clip-path: polygon(8% 0%, 92% 0%, 100% 5%, 100% 95%, 92% 100%, 8% 100%, 0% 95%, 0% 5%);
+}
+
+.speech-bubble {
+  position: relative;
+  background: #fff8e1;
+  border-radius: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-height: 120px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0) rgba(0,0,0,0) #fff8e1 rgba(0,0,0,0);
+}
+
+.roast-box {
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.stat-number {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.username-display {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.page-container {
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding: 0;
+  }
+}
